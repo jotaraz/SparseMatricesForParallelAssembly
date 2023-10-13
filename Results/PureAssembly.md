@@ -1,5 +1,5 @@
 In the following the x axis shows the number of non zero entries in a matrix. 
-The y axis shows the average runtime of the assembly in ms.
+The y axis shows the average runtime of the assembly in seconds.
 Both axis are log-scaled. 
 For each figure, the matrix size is fixed.
 
