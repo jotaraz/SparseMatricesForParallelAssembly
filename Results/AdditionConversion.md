@@ -1,4 +1,4 @@
-For both formats, LNK and Dict, we compare 3 different basic algorithms \
+For both formats, LNK and Dict, we compare 3 different basic algorithms
 #### 1. Add all non-CSC matrices, and convert the sum to CSC `AddNonCSCthenCSC`
 #### 2. Convert all non-CSC matrices to CSC and add them to an empty CSC matrix `AddNonCSCditoCSC`
 #### 3. Try to construct a clever way of filling the CSC matrix `be_clever_si`
