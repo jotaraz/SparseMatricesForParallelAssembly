@@ -62,120 +62,87 @@ splitted_up!(grid1, 8, 8, Add_NonCSC_then_CSC_par!, true, true)
 
 Set1:
 
-seq! f f
-Time  (mean ± σ):   1.514 s ± 45.338 ms  ┊ GC (mean ± σ):  6.68% ± 2.70%
-Memory estimate: 895.60 MiB, allocs estimate: 5113659.
-
-seq! t f
-Time  (mean ± σ):   1.403 s ± 118.915 ms  ┊ GC (mean ± σ):  7.53% ± 1.96%
-Memory estimate: 895.60 MiB, allocs estimate: 5113709.
-
-seq! f t
-Time  (mean ± σ):   1.331 s ± 71.110 ms  ┊ GC (mean ± σ):  5.78% ± 1.86%
-Memory estimate: 1.37 GiB, allocs estimate: 5113857.
-
-seq! t t
-Time  (mean ± σ):   1.369 s ± 10.262 ms  ┊ GC (mean ± σ):  7.03% ± 2.49%
-Memory estimate: 1.37 GiB, allocs estimate: 5113909.
-
-half! f t
-Time  (mean ± σ):   1.504 s ± 75.184 ms  ┊ GC (mean ± σ):  6.98% ± 2.95%
-Memory estimate: 1.43 GiB, allocs estimate: 5113909.
-
-half! t t
-Time  (mean ± σ):   1.236 s ± 66.483 ms  ┊ GC (mean ± σ):  8.18% ± 2.52%
-Memory estimate: 1.43 GiB, allocs estimate: 5113963.
-
-par! f t
-Time  (mean ± σ):   1.503 s ± 121.329 ms  ┊ GC (mean ± σ):  6.78% ± 2.44%
-Memory estimate: 1.43 GiB, allocs estimate: 5113962.
-
-par! t t
-Time  (mean ± σ):   1.222 s ± 43.618 ms  ┊ GC (mean ± σ):  8.28% ±  2.70%
-Memory estimate: 1.43 GiB, allocs estimate: 5114014.
-
-seq f t
-Time  (mean ± σ):   1.596 s ± 274.144 ms  ┊ GC (mean ± σ):  21.39% ± 13.58%
-Memory estimate: 1.81 GiB, allocs estimate: 5113972.
-
-seq t t
-Time  (mean ± σ):   1.251 s ± 71.097 ms  ┊ GC (mean ± σ):  7.58% ± 2.10%
-Memory estimate: 1.81 GiB, allocs estimate: 5114020.
-
-half f t
-Time  (mean ± σ):   1.187 s ± 79.061 ms  ┊ GC (mean ± σ):  6.98% ± 1.99%
-Memory estimate: 1.74 GiB, allocs estimate: 5114099.
-
-half t t
-Time  (mean ± σ):      1.025 s ± 23.435 ms  ┊ GC (mean ± σ):   8.77% ± 2.38%
-Memory estimate: 1.74 GiB, allocs estimate: 5114151.
-
-par f t
-Time  (mean ± σ):   1.147 s ± 23.476 ms  ┊ GC (mean ± σ):  7.78% ± 2.21%
-Memory estimate: 1.81 GiB, allocs estimate: 5114112.
-
-par t t
-Time  (mean ± σ):      1.037 s ± 50.126 ms  ┊ GC (mean ± σ):  9.04% ±  2.88%
-Memory estimate: 1.81 GiB, allocs estimate: 5114164.
+seq! f f  | 1.514 s | 895.60 MB
+seq! t f  | 1.403 s | 895.60 MB
+seq! f t  | 1.331 s | 1.37 GB
+seq! t t  | 1.369 s | 1.37 GB
+half! f t | 1.504 s | 1.43 GB
+half! t t | 1.236 s | 1.43 GB
+par! f t  | 1.503 s | 1.43 GB
+par! t t  | 1.222 s | 1.43 GB
+seq f t   | 1.596 s | 1.81 GB
+seq t t   | 1.251 s | 1.81 GB
+half f t  | 1.187 s | 1.74 GB
+half t t  | 1.025 s | 1.74 GB
+par f t   | 1.147 s | 1.81 GB
+par t t   | 1.037 s | 1.81 GB
 
 -------------------------------------------------
 Set2:
 
-seq! f f
-Time  (mean ± σ):   1.338 s ± 36.283 ms  ┊ GC (mean ± σ):  7.53% ±  2.45%
-Memory estimate: 895.60 MiB, allocs estimate: 5113659.
+seq! f f  | 1.338 s | 895.60 MB
+seq! t f  | 1.160 s | 895.60 MB
+seq! f t  | 1.401 s | 1.37 GB
+seq! t t  | 1.221 s | 1.37 GB
+half! f t | 1.508 s | 1.43 GB
+half! t t | 1.285 s | 1.43 GB
+par! f t  | 1.427 s | 1.43 GB
+par! t t  | 1.295 s | 1.43 GB
+seq f t   | 1.606 s | 1.81 GB
+seq t t   | 1.494 s | 1.81 GB
+half f t  | 1.530 s | 1.74 GB
+half t t  | 1.324 s | 1.74 GB
+par f t   | 1.426 s | 1.81 GB
+par t t   | 1.306 s | 1.81 GB
 
-seq! t f
-Time  (mean ± σ):   1.160 s ± 57.665 ms  ┊ GC (mean ± σ):  7.39% ± 1.98%
-Memory estimate: 895.60 MiB, allocs estimate: 5113710.
 
-seq! f t
-Time  (mean ± σ):   1.401 s ± 44.926 ms  ┊ GC (mean ± σ):  5.89% ± 1.62%
-Memory estimate: 1.37 GiB, allocs estimate: 5113858.
+--------------------------------------------------------
 
-seq! t t
-Time  (mean ± σ):   1.221 s ± 32.377 ms  ┊ GC (mean ± σ):  8.18% ± 2.94%
-Memory estimate: 1.37 GiB, allocs estimate: 5113908.
 
-half! f t
-Time  (mean ± σ):   1.508 s ± 85.451 ms  ┊ GC (mean ± σ):  6.76% ± 2.39%
-Memory estimate: 1.43 GiB, allocs estimate: 5113912.
+800 x 801
 
-half! t t
-Time  (mean ± σ):   1.285 s ± 21.582 ms  ┊ GC (mean ± σ):  7.36% ± 2.54%
-Memory estimate: 1.43 GiB, allocs estimate: 5113961.
 
-par! f t
-Time  (mean ± σ):   1.427 s ± 93.170 ms  ┊ GC (mean ± σ):  6.99% ± 2.62%
-Memory estimate: 1.43 GiB, allocs estimate: 5113960.
+Set 1
 
-par! t t
-Time  (mean ± σ):   1.295 s ± 46.031 ms  ┊ GC (mean ± σ):  7.00% ± 2.26%
-Memory estimate: 1.43 GiB, allocs estimate: 5114013.
+seq! f f  | 3.228 s | 1.54 GB
+seq! t f  | 2.985 s | 1.75 GB
+seq! f t  | 3.408 s | 2.74 GB
+seq! t t  | 2.675 s | 2.74 GB
+half! f t | 3.493 s | 2.85 GB
+half! t t | 2.926 s | 2.85 GB
+par! f t  | 3.680 s | 2.85 GB
+par! t t  | 3.173 s | 2.85 GB
+seq f t   | 3.937 s | 3.62 GB
+seq t t   | 3.093 s | 3.62 GB
+half f t  | 3.140 s | 3.48 GB
+half t t  | 2.569 s | 3.48 GB
+par f t   | 2.852 s | 3.61 GB
+par t t   | 2.574 s | 3.61 GiB
+ 
+ 
+ Set 2
+ 
+seq! f f  | 3.428 s | 1.75 GB
+seq! t f  | 3.025 s | 1.75 GB
+seq! f t  | 3.619 s | 2.74 GB
+seq! t t  | 3.274 s | 2.74 GB
+half! f t | 3.714 s | 2.85 GB
+half! t t | 3.360 s | 2.85 GB
+par! f t  | 3.869 s | 2.85 GB
+par! t t  | 3.445 s | 2.85 GB
+seq f t   | 3.801 s | 3.62 GB
+seq t t   | 3.457 s | 3.62 GB
+half f t  | 3.301 s | 3.48 GB
+half t t  | 3.098 s | 3.48 GB
+par f t   | 3.153 s | 3.61 GB
+par t t   | 2.898 s | 3.61 GB
 
-seq f t
-Time  (mean ± σ):   1.606 s ± 278.725 ms  ┊ GC (mean ± σ):  21.69% ± 13.82%
-Memory estimate: 1.81 GiB, allocs estimate: 5113971.
 
-seq t t
-Time  (mean ± σ):   1.494 s ± 155.866 ms  ┊ GC (mean ± σ):  16.53% ± 12.30%
-Memory estimate: 1.81 GiB, allocs estimate: 5114024.
 
-half f t
-Time  (mean ± σ):   1.530 s ± 108.789 ms  ┊ GC (mean ± σ):  6.80% ± 1.87%
-Memory estimate: 1.74 GiB, allocs estimate: 5114101.
+-------------------------------------------------------------------
 
-half t t
-Time  (mean ± σ):   1.324 s ± 36.448 ms  ┊ GC (mean ± σ):  8.53% ± 2.47%
-Memory estimate: 1.74 GiB, allocs estimate: 5114152.
 
-par f t
-Time  (mean ± σ):   1.426 s ± 42.441 ms  ┊ GC (mean ± σ):  7.37% ± 1.66%
-Memory estimate: 1.81 GiB, allocs estimate: 5114114.
-
-par t t
-Time  (mean ± σ):   1.306 s ± 54.327 ms  ┊ GC (mean ± σ):   8.58% ±  3.36%
-Memory estimate: 1.81 GiB, allocs estimate: 5114163.
+800 x 401:
 
 ----------------------------------------------------------
 
