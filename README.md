@@ -14,6 +14,11 @@ Which format / which algorithm performs best for converting the sum of multiple 
 ### 3. Assembly in CSC
 For example when using the Newton method to solve a nonlinear PDE, we only use 1. to find the structure of the matrix, but we directly change the entries of the CSC matrix
 
+There is a 0-th step:
+
+### 0. Preparation
+The grid needs to be partitioned...
+
 ## General Idea
 
 ### 1. The true assembly
