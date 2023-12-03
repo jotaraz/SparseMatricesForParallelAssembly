@@ -29,7 +29,7 @@ In the last paragraph we explained we needed a mapping from indices in the subma
 ### 3. Assembly in CSC
 **This is the current slow algorithm.**
 After the initial assembly and the conversion we have the CSC matrix and we do not longer need the RLNK matrices. But, for solving nonlinear PDEs, the Newton method is used where the values in the CSC matrix are changed. Most of the times, only the values are changed, not the structure.
-But somtimes there is a value that could be $$\neq 0$$ (structurally) but happens to be 0 in the initial assembly. Then this entry is not inlcuded in the CSC matrix. But in the next Newton step, this value could actually be $$\neq 0$$. For such cases, we have so-called backup reduced LNK matrices. After iterating over all cells, the CSC matrix has changed entries and we probably have some entries in the backup matrix, those need to be summed together.
+But somtimes there is a value that could be $\neq 0$ (structurally) but happens to be 0 in the initial assembly. Then this entry is not inlcuded in the CSC matrix. But in the next Newton step, this value could actually be $\neq 0$. For such cases, we have so-called backup reduced LNK matrices. After iterating over all cells, the CSC matrix has changed entries and we probably have some entries in the backup matrix, those need to be summed together.
 
 
 ## How to benchmark the code
