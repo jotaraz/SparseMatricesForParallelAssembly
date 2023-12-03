@@ -16,11 +16,20 @@ For example when using the Newton method to solve a nonlinear PDE, we only use 1
 
 ## General Idea
 
-### 1.
+### 1. The true assembly
+Our approach is based on linked-lists-matrices (LNK) using the [ExtendableSparse.jl](https://github.com/j-fu/ExtendableSparse.jl) implementation. 
+The general idea is the following: Consider 4 threads, then the cells in your grid are partitioned into 4 regions with a separator, such that no node is in two partitions (but it could be in a partition and in the separator). After partitioning the cells, for each node we know in which region it is (and thus, which thread will access it). Then, we create 4+1 LNK (reduced) matrices, such that each matrix has as many columns as there are nodes in the respective region (or in the separator). We also have a mapping from indices in the reduced matrix to indices in the (big) matrix.
+Then, each thread iterates over the cells in the respective region and writes into the reduced respective matrix. Afterwards, we iterate over the separator.
+In the end we have 5 LNK reduced matrices which are all smaller then the original matrix.
+This format is called RLNKs.
 
-### 2.
+### 2. Conversion to CSC
+In the last paragraph we explained we needed a mapping from indices in the submatrix to indices in the (big) matrix. We also need the reverse mapping, such that we iterate over the global node indices, get the column in the submatrix, put it in the [CSC](https://docs.julialang.org/en/v1/stdlib/SparseArrays/) `rowval`- and `nzval`-arrays. For the nodes that are also accessed by the separator, we need to access the separator matrix as well.
 
-### 3.
+### 3. Assembly in CSC
+**This is the current slow algorithm.**
+After the initial assembly and the conversion we have the CSC matrix and we do not longer need the RLNK matrices. But, for solving nonlinear PDEs, the Newton method is used where the values in the CSC matrix are changed. Most of the times, only the values are changed, not the structure.
+But somtimes there is a value that could be $$\neq 0$$ (structurally) but happens to be 0 in the initial assembly. Then this entry is not inlcuded in the CSC matrix. But in the next Newton step, this value could actually be $$\neq 0$$. For such cases, we have so-called backup reduced LNK matrices. After iterating over all cells, the CSC matrix has changed entries and we probably have some entries in the backup matrix, those need to be summed together.
 
 
 ## How to benchmark the code
