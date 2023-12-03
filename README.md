@@ -1,6 +1,12 @@
 # SparseMatricesForParallelAssembly
 In this repository I investigate different sparse matrix formats which can be used for the assembly process in FVM (or FEM). Using Julia.
 
+## Table of contents:
+- Problem statement
+- General idea
+- How to benchmark the code
+- To-Do
+
 ## Problem statement
 
 We divide the "assembly" process into 3 steps:
@@ -19,7 +25,7 @@ There is a 0-th step:
 ### 0. Preparation
 The grid needs to be partitioned...
 
-## General Idea
+## General idea
 
 ### 1. The true assembly
 Our approach is based on linked-lists-matrices (LNK) using the [ExtendableSparse.jl](https://github.com/j-fu/ExtendableSparse.jl) implementation. 
@@ -48,7 +54,13 @@ Using the [Pluto](https://github.com/fonsp/Pluto.jl) notebook [src/plot_benchmar
 
 **Caution: The preparation of the grids (i.e. conversion to graph and partitioning) are very slow for fine/large grids, especially in 3d.**
 
+## To-Do
 
+- Optimize CSC-assembly
+- Optimize preparation
+- ILUZero
+- Boundary treatment
+- Implementation
 
 
 
