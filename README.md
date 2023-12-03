@@ -34,10 +34,12 @@ But somtimes there is a value that could be $\neq 0$ (structurally) but happens 
 
 ## How to benchmark the code
 
-Use `src/auto.jl`. 
+Use [src/auto.jl](https://github.com/jotaraz/SparseMatricesForParallelAssembly/blob/main/src/auto.jl). 
 The `path` is set automatically using `pwd()`.
 The `pre_name` has to be set manually to a directory (which has to exist when running the code) where the data should be stored.
 Then some 2d and 3d grids are created and the assembly, the conversion to CSC and the CSC-assembly are benchmarked. Using the `ns` arrays you can change which grids you want to test.
+
+Using the [Pluto](https://github.com/fonsp/Pluto.jl) notebook [src/plot_benchmark_data.jl](https://github.com/jotaraz/SparseMatricesForParallelAssembly/blob/main/src/plot_benchmark_data.jl`) the benchmark data I already collected can be visulaized.
 
 **Caution: The preparation of the grids (i.e. conversion to graph and partitioning) are very slow for fine/large grids, especially in 3d.**
 
