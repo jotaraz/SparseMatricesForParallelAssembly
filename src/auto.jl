@@ -17,8 +17,14 @@ end
 
 run_auto_nowrite(;ss=2)
 
+#For all grids:
+
+# This runs the assembly, CSC-conversion and CSC-assembly functions and writes the number of allocated bytes into a file.
 run_auto_allocs()
 
+# This runs the assembly 10 times and writes the times into a file.
 run_auto(1, 10)
+# This runs the CSC-conversion 10 times and writes the times into a file.
 run_auto(2, 10)
+# This runs the CSC-assembly 10 times and writes the times into a file.
 run_auto(3, 10)
