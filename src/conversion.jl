@@ -98,7 +98,10 @@ function CSC_RLNK_si_oc_ps_dz(
 	end
 
 	indptr[end] = ctr
-	
+
+	#resize!(indices, ctr-1)
+	#resize!(data, ctr-1)
+	#SparseArrays.SparseMatrixCSC(As[1].m, As[1].m, indptr, indices, data)
 	SparseArrays.SparseMatrixCSC(
 		As[1].m, As[1].m, indptr, indices[1:ctr-1], data[1:ctr-1]
 	)
@@ -203,6 +206,9 @@ function CSC_RLNK_si_oc_ps(
 
 	indptr[end] = ctr
 	
+	#resize!(indices, ctr-1)
+	#resize!(data, ctr-1)
+	#SparseArrays.SparseMatrixCSC(As[1].m, As[1].m, indptr, indices, data)
 	SparseArrays.SparseMatrixCSC(
 		As[1].m, As[1].m, indptr, indices[1:ctr-1], data[1:ctr-1]
 	)
