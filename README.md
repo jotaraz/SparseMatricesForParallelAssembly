@@ -56,6 +56,7 @@ Using the [Pluto](https://github.com/fonsp/Pluto.jl) notebook [src/plot_benchmar
 
 ## To-Do
 
+- How does the runtime scale with the number of threads?
 - Parallelize CSC conversion 
 - Optimize CSC-assembly
 - Optimize preparation
