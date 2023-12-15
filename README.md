@@ -56,6 +56,7 @@ Using the [Pluto](https://github.com/fonsp/Pluto.jl) notebook [src/plot_benchmar
 
 ## To-Do
 
+- Parallelize CSC conversion 
 - Optimize CSC-assembly
 - Optimize preparation
 - ILUZero
