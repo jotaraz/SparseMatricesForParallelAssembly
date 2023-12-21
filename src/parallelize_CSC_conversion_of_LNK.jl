@@ -301,10 +301,10 @@ function compare_seq_to_parallel(num, n, k)
 	a1 = @allocated pe_s(B, C)
 	a2 = @allocated pe_p(B, C, nt)
 		
-	println("Time  for sequential LNK+CSC: $(minimum(times1))")
-	println("Time  for parallel   LNK+CSC: $(minimum(times2))")
-	println("Allocs in sequential LNK+CSC: $a1")
-	println("Allocs in parallel   LNK+CSC: $a2")
+	println("Time  for sequential LNK+CSC: $(minimum(times1)) seconds")
+	println("Time  for parallel   LNK+CSC: $(minimum(times2)) seconds")
+	println("Allocs in sequential LNK+CSC: $a1 bytes")
+	println("Allocs in parallel   LNK+CSC: $a2 bytes")
 end
 		
 	
