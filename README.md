@@ -56,10 +56,10 @@ Using the [Pluto](https://github.com/fonsp/Pluto.jl) notebook [src/plot_benchmar
 
 ## To-Do
 
-- How does the runtime scale with the number of threads?
+- $\surd$ How does the runtime scale with the number of threads?
 - Parallelize CSC conversion 
-- Optimize CSC-assembly
-- Why can we not separate the separate more than 3 times?
+- $\surd$ Optimize CSC-assembly
+- Why can we not separate the separate more than 3 times? Does this hold for smaller `nt` too?
 - Optimize preparation
 - ILUZero
 - Boundary treatment
