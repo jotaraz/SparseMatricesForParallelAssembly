@@ -15,6 +15,11 @@ function array_ci(x)
 	end
 end
 
+"""
+`function pe_s(lnk::SparseMatrixLNK{Tv, Ti}, csc::SparseMatrixCSC)::SparseMatrixCSC where {Tv, Ti <: Integer}`
+
+This function is taken from Jürgen Fuhrmann's `https://github.com/j-fu/ExtendableSparse.jl/blob/master/src/matrix/sparsematrixlnk.jl` the function there is called `function Base.:+(lnk::SparseMatrixLNK{Tv, Ti}, csc::SparseMatrixCSC)::SparseMatrixCSC where {Tv, Ti <: Integer}`
+"""
 function pe_s(lnk::SparseMatrixLNK{Tv, Ti},
                  csc::SparseMatrixCSC)::SparseMatrixCSC where {Tv, Ti <: Integer}
     @assert(csc.m==lnk.m)
@@ -244,16 +249,15 @@ function pe_p(lnk::SparseMatrixLNK{Tv, Ti},
     resize!(nzvals[1], colptrs[1][end] - 1)
     SparseMatrixCSC{Tv, Ti}(csc.m, csc.n, colptrs[1], rowvals[1], nzvals[1])
 end
-
-
 """
 `function compare_seq_to_parallel(num, n, k)`
 
 1. Use the sequential `pe_s` and the parallel `pe_p` functions for `CSC + LNK` and compare the results.
 2. Compare the time and allocations they take / make.
-Random matrices are used.
-num: Samplesize for the benchmark. \
-n: Both the LNK and the CSC matrix are square n x n matrices. \
+
+Random matrices are used. The number of threads used is the number Julia is started with (e.g. `julia -t 4`). `n` has to be an integer multiple of the number of threads. \\
+num: Samplesize for the benchmark. \\
+n: Both the LNK and the CSC matrix are square n x n matrices. \\
 k: Number of changes in the matrix, k <= number of non-zero entries
 """
 function compare_seq_to_parallel(num, n, k)
