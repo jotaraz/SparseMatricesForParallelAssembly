@@ -60,7 +60,7 @@ Using the [Pluto](https://github.com/fonsp/Pluto.jl) notebook [src/plot_benchmar
 - Parallelize CSC conversion 
 - $\surd$ Optimize CSC-assembly
 - Why can we not separate the separate more than 3 times? Does this hold for smaller `nt` too?
-- Optimize preparation
+- $\surd$ Optimize preparation
 - $\surd$ ILUZero
 - Boundary treatment
 - Implementation (in VoronoiFVM.jl)
