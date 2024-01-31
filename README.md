@@ -64,6 +64,7 @@ Using the [Pluto](https://github.com/fonsp/Pluto.jl) notebook [src/plot_benchmar
 - $\surd$ ILUZero
 - Boundary treatment
 - Implementation (in VoronoiFVM.jl)
+- create a nice struct (e.g. ExtendableSparseMatrixPar)
 
 
 
