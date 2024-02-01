@@ -65,6 +65,7 @@ Using the [Pluto](https://github.com/fonsp/Pluto.jl) notebook [src/plot_benchmar
 - Boundary treatment
 - Implementation (in VoronoiFVM.jl)
 - create a nice struct (e.g. ExtendableSparseMatrixPar)
+- @spawn instead of Threads.@threads :static
 
 
 
