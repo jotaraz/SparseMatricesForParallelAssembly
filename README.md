@@ -66,7 +66,7 @@ Using the [Pluto](https://github.com/fonsp/Pluto.jl) notebook [src/plot_benchmar
 - Implementation (in VoronoiFVM.jl)
 - create a nice struct (e.g. ExtendableSparseMatrixPar)
 - @spawn instead of Threads.@threads :static
-
+- check out how much performance difference there is btw. using an array and an array which is a field of a struct
 
 
 
